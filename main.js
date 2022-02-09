@@ -13,8 +13,25 @@ Webcam.set({
        })
      }
     
-     console.log("ml5 version" , ml5.verion);
+     console.log("ml5 version" , ml5.version);
     
     camera = document.getElementById("camera");
     
-    classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/o7kiXAlbB/model.json',modelloaded)
+    classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/3aTnxnbrI/model.json',modelloaded)
+function modelloaded(){
+    console.log("modelloaded");
+}
+function check(){
+    img = document.getElementById('captured_image');
+    classifier.classify(img , gotResult);
+  }
+   function gotResult(error , result){
+     if(error){
+     console.error(error);
+    }
+    else{
+      console.log(result);
+      document.getElementById("results_of_object").innerHTML = result[0].label;
+      document.getElementById("results_of_Accuracy").innerHTML= result[0].confidence.toFixed(3);
+    }
+    }
