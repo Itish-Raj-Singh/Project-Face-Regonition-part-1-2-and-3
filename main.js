@@ -17,7 +17,7 @@ Webcam.set({
     
     camera = document.getElementById("camera");
     
-    classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/3aTnxnbrI/model.json',modelloaded)
+    classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/GIDOqinao/model.json',modelloaded)
 function modelloaded(){
     console.log("modelloaded");
 }
